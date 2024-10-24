@@ -6,7 +6,7 @@
 wget https://dev.mysql.com/get/mysql-apt-config_0.8.33-1_all.deb
 ```
 
-## Instalasi MySQL Server
+## Instalasi
 
 ```
 sudo dpkg -i mysql-apt-config_0.8.33-1_all.deb

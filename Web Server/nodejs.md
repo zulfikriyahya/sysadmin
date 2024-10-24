@@ -1,11 +1,5 @@
 # Instalasi Node.js
 
-## Instalasi Curl
-
-```
-sudo apt install curl -y
-```
-
 ## Instalasi Via nvm (Node Version Manager)
 
 ```

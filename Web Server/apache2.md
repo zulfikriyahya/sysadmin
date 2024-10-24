@@ -1,14 +1,12 @@
 # Instalasi Apache
 
+## Install
+
 ```
 sudo apt install apache2
 ```
 
-```
-sudo systemctl status apache2
-```
-
-## Mengelola Service
+## Mengelola
 
 ### Menjalankan
 
@@ -38,4 +36,10 @@ sudo systemctl enable apache2
 
 ```
 sudo systemctl disable apache2
+```
+
+### Melihat Status
+
+```
+sudo systemctl status apache2
 ```
