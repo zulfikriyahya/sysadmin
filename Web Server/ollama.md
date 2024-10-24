@@ -1,62 +1,62 @@
 # Linux
 
-## Install
+## Instalasi
 
-To install Ollama, run the following command:
+Untuk menginstal Ollama, jalankan perintah berikut:
 
 ```shell
 curl -fsSL https://ollama.com/install.sh | sh
 ```
 
-## Manual install
+## Instalasi Manual
 
-Download and extract the package:
+Unduh dan ekstrak paket:
 
 ```shell
 curl -L https://ollama.com/download/ollama-linux-amd64.tgz -o ollama-linux-amd64.tgz
 sudo tar -C /usr -xzf ollama-linux-amd64.tgz
 ```
 
-Start Ollama:
+Mulai Ollama:
 
 ```shell
 ollama serve
 ```
 
-In another terminal, verify that Ollama is running:
+Di terminal lain, verifikasi bahwa Ollama berjalan:
 
 ```shell
 ollama -v
 ```
 
-### AMD GPU install
+### Instalasi GPU AMD
 
-If you have an AMD GPU, also download and extract the additional ROCm package:
+Jika kamu memiliki GPU AMD, juga unduh dan ekstrak paket ROCm tambahan:
 
 ```shell
 curl -L https://ollama.com/download/ollama-linux-amd64-rocm.tgz -o ollama-linux-amd64-rocm.tgz
 sudo tar -C /usr -xzf ollama-linux-amd64-rocm.tgz
 ```
 
-### ARM64 install
+### Instalasi ARM64
 
-Download and extract the ARM64-specific package:
+Unduh dan ekstrak paket khusus ARM64:
 
 ```shell
 curl -L https://ollama.com/download/ollama-linux-arm64.tgz -o ollama-linux-arm64.tgz
 sudo tar -C /usr -xzf ollama-linux-arm64.tgz
 ```
 
-### Adding Ollama as a startup service (recommended)
+### Menambahkan Ollama sebagai layanan startup (direkomendasikan)
 
-Create a user and group for Ollama:
+Buat pengguna dan grup untuk Ollama:
 
 ```shell
 sudo useradd -r -s /bin/false -U -m -d /usr/share/ollama ollama
 sudo usermod -a -G ollama $(whoami)
 ```
 
-Create a service file in `/etc/systemd/system/ollama.service`:
+Buat file layanan di `/etc/systemd/system/ollama.service`:
 
 ```ini
 [Unit]
@@ -75,71 +75,66 @@ Environment="PATH=$PATH"
 WantedBy=default.target
 ```
 
-Then start the service:
+Kemudian mulai layanan:
 
 ```shell
 sudo systemctl daemon-reload
 sudo systemctl enable ollama
 ```
 
-### Install CUDA drivers (optional)
+### Instalasi driver CUDA (opsional)
 
-[Download and install](https://developer.nvidia.com/cuda-downloads) CUDA.
+[Unduh and instal](https://developer.nvidia.com/cuda-downloads) CUDA.
 
-Verify that the drivers are installed by running the following command, which should print details about your GPU:
+Verifikasi bahwa driver sudah terinstal dengan menjalankan perintah berikut, yang akan mencetak detail tentang GPU-mu:
 
 ```shell
 nvidia-smi
 ```
 
-### Install AMD ROCm drivers (optional)
+### Instalasi driver AMD ROCm (opsional)
 
-[Download and Install](https://rocm.docs.amd.com/projects/install-on-linux/en/latest/tutorial/quick-start.html) ROCm v6.
+[Unduh and Instal](https://rocm.docs.amd.com/projects/install-on-linux/en/latest/tutorial/quick-start.html) ROCm v6.
 
-### Start Ollama
+### Mulai Ollama
 
-Start Ollama and verify it is running:
+Mulai Ollama dan verifikasi bahwa ia berjalan:
 
 ```shell
 sudo systemctl start ollama
 sudo systemctl status ollama
 ```
 
-> [!NOTE]
-> While AMD has contributed the `amdgpu` driver upstream to the official linux
-> kernel source, the version is older and may not support all ROCm features. We
-> recommend you install the latest driver from
-> https://www.amd.com/en/support/linux-drivers for best support of your Radeon
-> GPU.
+> [!Catatan] Meskipun AMD telah menyumbangkan driver `amdgpu` ke kernel linux resmi, versi tersebut lebih lama dan mungkin tidak mendukung semua fitur ROCm. Kami merekomendasikan untuk menginstal driver terbaru dari AMD untuk dukungan terbaik dari GPU Radeon-mu.
 
-## Updating
+## Memperbarui
 
-Update Ollama by running the install script again:
+Perbarui Ollama dengan menjalankan skrip instalasi lagi:
 
 ```shell
 curl -fsSL https://ollama.com/install.sh | sh
 ```
 
-Or by re-downloading Ollama:
+Atau dengan mengunduh ulang Ollama:
 
 ```shell
 curl -L https://ollama.com/download/ollama-linux-amd64.tgz -o ollama-linux-amd64.tgz
 sudo tar -C /usr -xzf ollama-linux-amd64.tgz
 ```
 
-## Installing specific versions
+## Menginstal versi tertentu
 
-Use `OLLAMA_VERSION` environment variable with the install script to install a specific version of Ollama, including pre-releases. You can find the version numbers in the [releases page](https://github.com/ollama/ollama/releases).
+Gunakan variabel lingkungan `OLLAMA_VERSION` dengan skrip instalasi untuk menginstal versi tertentu dari Ollama, termasuk pra-rilis. Kamu bisa menemukan nomor versi di [halaman rilis](https://github.com/ollama/ollama/releases).
 
-For example:
+Misalnya:
 
 ```shell
 curl -fsSL https://ollama.com/install.sh | OLLAMA_VERSION=0.3.9 sh
 ```
 
-## Viewing logs
+## Melihat log
 
-To view logs of Ollama running as a startup service, run:
+Untuk melihat log Ollama yang berjalan sebagai layanan startup, jalankan:
 
 ```shell
 journalctl -e -u ollama
@@ -147,7 +142,7 @@ journalctl -e -u ollama
 
 ## Uninstall
 
-Remove the ollama service:
+Hapus layanan ollama:
 
 ```shell
 sudo systemctl stop ollama
@@ -155,13 +150,13 @@ sudo systemctl disable ollama
 sudo rm /etc/systemd/system/ollama.service
 ```
 
-Remove the ollama binary from your bin directory (either `/usr/local/bin`, `/usr/bin`, or `/bin`):
+Hapus binary ollama dari direktori bin (baik `/usr/local/bin`, `/usr/bin`, atau `/bin`):
 
 ```shell
 sudo rm $(which ollama)
 ```
 
-Remove the downloaded models and Ollama service user and group:
+Hapus model yang diunduh dan pengguna serta grup layanan Ollama:
 
 ```shell
 sudo rm -r /usr/share/ollama
