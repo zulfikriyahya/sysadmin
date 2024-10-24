@@ -1,39 +1,39 @@
 # Install Grafana
 
-## Install the prerequisite packages:
+## Instal paket prasyarat:
 
 sudo apt-get install -y apt-transport-https software-properties-common wget
 
-## Import the GPG key:
+## Impor kunci GPG:
 
 sudo mkdir -p /etc/apt/keyrings/
 wget -q -O - https://apt.grafana.com/gpg.key | gpg --dearmor | sudo tee /etc/apt/keyrings/grafana.gpg > /dev/null
 
-## To add a repository for stable releases:
+## Untuk menambahkan repositori untuk rilis stabil:
 
 echo "deb [signed-by=/etc/apt/keyrings/grafana.gpg] https://apt.grafana.com stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
 
-## To add a repository for beta releases:
+## Untuk menambahkan repositori untuk rilis beta:
 
 echo "deb [signed-by=/etc/apt/keyrings/grafana.gpg] https://apt.grafana.com beta main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
 
-## Updates the list of available packages
+## Memperbarui daftar paket yang tersedia
 
 sudo apt-get update
 
-## Installs the latest OSS release:
+## Menginstal rilis OSS terbaru:
 
 sudo apt-get install grafana
 
-### NOT starting on installation, please execute the following statements to configure grafana to start automatically using systemd
+### TIDAK dimulai saat instalasi, silakan jalankan pernyataan berikut untuk mengkonfigurasi grafana untuk memulai secara otomatis menggunakan systemd
 
 sudo systemctl daemon-reload
 sudo systemctl enable --now grafana-server
 
-### You can start grafana-server by executing
+### Anda dapat memulai grafana-server dengan menjalankan
 
 sudo systemctl start grafana-server
 
-## Setting Firewall
+## Mengatur Firewall
 
 sudo ufw allow 3000
