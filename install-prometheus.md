@@ -1,4 +1,4 @@
-# Install Promatheus
+# Instalasi Prometheus
 
 ## Download
 
@@ -30,7 +30,7 @@ sudo groupadd --system prometheus
 sudo useradd --system -s /sbin/nologin -g prometheus prometheus
 ```
 
-## Pindahkan Binari File ke /usr/local/bin/
+## Pindahkan File ke /usr/local/bin/
 
 ```
 sudo mv prometheus promtool /usr/local/bin/
@@ -57,7 +57,7 @@ sudo chown -R prometheus:prometheus /var/lib/prometheus
 ## Pindahkan direktori dan file consoles/ console_libraries/ prometheus.yml ke /etc/prometheus/
 
 ```
-sudo mv consoles/ console_libraries/ prometheus.yml ke /etc/prometheus/
+sudo mv consoles/ console_libraries/ prometheus.yml /etc/prometheus/
 ```
 
 ## Pindah direktori
@@ -130,7 +130,7 @@ sudo systemctl daemon-reload
 sudo systemctl enable --now prometheus
 ```
 
-## Setting Firewall
+## Mengatur Firewall
 
 ```
 sudo ufw allow 9090

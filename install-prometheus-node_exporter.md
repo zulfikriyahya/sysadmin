@@ -1,4 +1,4 @@
-# Install Promatheus Node_Exporter
+# Instalasi Node Exporter Promatheus
 
 ## Download
 
@@ -12,7 +12,7 @@ wget https://github.com/prometheus/node_exporter/releases/download/v1.8.2/node_e
 tar xvf node_exporter-1.8.2.linux-amd64
 ```
 
-## Pindah Direktori
+## Pindah ke Direktori File
 
 ```
 cd node_exporter-1.8.2.linux-amd64
@@ -54,13 +54,13 @@ WantedBy=multi-user.target
 sudo systemctl daemon-reload
 ```
 
-## Menjalankan Service dan autostart Node_Exporter
+## Menjalankan Service dan Autostart node-exporter
 
 ```
 sudo systemctl enable --now node-exporter
 ```
 
-## Setting Firewall
+## Mengatur Firewall
 
 ```
 sudo ufw allow 9100
