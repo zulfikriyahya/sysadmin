@@ -90,11 +90,15 @@ sudo ufw deny 443
 
 ### Mengizinkan akses dari IP 36.125.176.24
 
+```
 sudo ufw allow from 36.125.176.24
+```
 
 ### Menolak akses dari IP 36.125.176.24
 
+```
 sudo ufw deny from 36.125.176.24
+```
 
 ## Menjalankan Autostart
 
