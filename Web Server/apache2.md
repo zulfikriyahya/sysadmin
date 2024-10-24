@@ -3,7 +3,7 @@
 ## Install
 
 ```
-sudo apt install apache2
+sudo apt install apache2 -y
 ```
 
 ## Mengelola
