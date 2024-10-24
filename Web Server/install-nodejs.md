@@ -6,7 +6,7 @@
 sudo apt install curl -y
 ```
 
-## Instalasi nvm (Node Version Manager)
+## Instalasi Via nvm (Node Version Manager)
 
 ```
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
@@ -30,7 +30,7 @@ node -v
 npm -v
 ```
 
-## Instalasi fnm (Fast Node Manager)
+## Instalasi Via fnm (Fast Node Manager)
 
 ```
 curl -fsSL https://fnm.vercel.app/install | bash
