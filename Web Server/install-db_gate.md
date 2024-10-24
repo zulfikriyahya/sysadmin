@@ -1,5 +1,11 @@
 # Instalasi DB Gate (Database Tools)
 
+## Instalasi wget
+
+```
+sudo apt install wget -y
+```
+
 ## Download
 
 ```
