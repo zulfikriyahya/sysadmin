@@ -17,13 +17,9 @@ echo "deb [signed-by=/etc/apt/keyrings/grafana.gpg] https://apt.grafana.com stab
 
 echo "deb [signed-by=/etc/apt/keyrings/grafana.gpg] https://apt.grafana.com beta main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
 
-## Run the following command to update the list of available packages:
-
 ## Updates the list of available packages
 
 sudo apt-get update
-
-## To install Grafana OSS:
 
 ## Installs the latest OSS release:
 
