@@ -1,7 +1,21 @@
 # Instalasi
 
 ```
-sudo apt-get install ufw
+sudo apt install ufw
+```
+
+# Membongkar
+
+```
+sudo apt purge ufw
+```
+
+```
+sudo apt autoremove
+```
+
+```
+sudo apt autoclean
 ```
 
 # Mengelola
