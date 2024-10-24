@@ -1,4 +1,4 @@
-# Install Grafana
+# Instalasi Grafana
 
 ## Instal paket prasyarat:
 
