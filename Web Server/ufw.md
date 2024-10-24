@@ -4,20 +4,6 @@
 sudo apt install ufw
 ```
 
-# Membongkar
-
-```
-sudo apt purge ufw
-```
-
-```
-sudo apt autoremove
-```
-
-```
-sudo apt autoclean
-```
-
 # Mengelola
 
 ## Blokir seluruh port akses masuk
@@ -130,4 +116,18 @@ sudo ufw disable
 
 ```
 sudo ufw status
+```
+
+# Membongkar
+
+```
+sudo apt purge ufw
+```
+
+```
+sudo apt autoremove
+```
+
+```
+sudo apt autoclean
 ```
