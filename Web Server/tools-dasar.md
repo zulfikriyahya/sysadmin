@@ -43,3 +43,9 @@ sudo apt install zip -y
 ```
 sudo apt install tar -y
 ```
+
+# Instalasi ufw (Firewall)
+
+```
+sudo apt install ufw -y
+```
